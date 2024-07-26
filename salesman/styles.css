@@ -1,0 +1,72 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-section {
+    width: 100%;
+    max-width: 500px;
+    margin-right: 20px;
+}
+
+.table-section {
+    width: 100%;
+    max-width: 500px;
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-section th, .table-section td {
+    padding: 10px;
+    text-align: left;
+}
+
+.table-section th {
+    background-color: #f4f4f9;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .form-section {
+        width: 50%;
+    }
+
+    .table-section {
+        width: 50%;
+    }
+}
