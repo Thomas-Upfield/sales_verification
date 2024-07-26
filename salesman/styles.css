@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chivo', sans-serif;
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
@@ -27,6 +27,7 @@ body {
 .table-section {
     width: 100%;
     max-width: 500px;
+    display: none; /* Initially hide the table section */
 }
 
 .table-section table {
@@ -43,7 +44,13 @@ body {
     background-color: #f4f4f9;
 }
 
-h1, h2 {
+h1 {
+    color: #333;
+    font-size: 1.5rem; /* Font size reduced by half */
+    margin-bottom: 20px;
+}
+
+h2 {
     color: #333;
 }
 

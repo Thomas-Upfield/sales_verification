@@ -22,6 +22,9 @@ document.getElementById('addSale').addEventListener('click', function() {
 
         tableBody.appendChild(newRow);
 
+        // Show the table section if it is hidden
+        document.getElementById('tableSection').style.display = 'block';
+
         // Clear input fields
         document.getElementById('clientName').value = '';
         document.getElementById('productName').value = '';
