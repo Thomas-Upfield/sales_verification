@@ -12,47 +12,57 @@
 </head>
 <body>
     <div class="container">
-        <div class="form-section">
-            <h1>Enter your new sales here</h1>
-            <form id="salesForm">
-                <div id="salesContainer">
-                    <div class="sale-entry">
-                        <div class="input-field">
-                            <input type="text" id="clientName" name="clientName[]" required>
-                            <label for="clientName">Client Name</label>
-                        </div>
-
-                        <div class="input-field">
-                            <input type="text" id="productName" name="productName[]" required>
-                            <label for="productName">Product Name</label>
-                        </div>
-
-                        <div class="input-field">
-                            <input type="number" id="saleAmount" name="saleAmount[]" required>
-                            <label for="saleAmount">Sale Amount</label>
-                        </div>
-
-                        <div class="input-field">
-                            <select id="currency" name="currency[]" required>
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="USD">USD</option>
-                                <option value="EUR">EUR</option>
-                                <option value="GBP">GBP</option>
-                                <option value="JPY">JPY</option>
-                                <option value="CNY">CNY</option>
-                                <option value="HKD">HKD</option>
-                                <option value="ADA">ADA</option>
-                                <option value="USDM">USDM</option>
-                            </select>
-                            <label for="currency">Currency</label>
-                        </div>
-                    </div>
-                </div>
-                <button type="button" id="addSale" class="btn waves-effect waves-light blue">Add Another Sale</button>
-                <button type="submit" class="btn waves-effect waves-light green">Submit All Sales</button>
-            </form>
+        <div id="initialView" class="center">
+            <button id="openModal" class="btn-large waves-effect waves-light blue">Add New Sale</button>
         </div>
-        <div class="table-section" id="tableSection">
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Enter Your New Sales Here</h4>
+                <form id="modalForm">
+                    <div class="input-field">
+                        <input type="text" id="modalClientName" name="clientName" required>
+                        <label for="modalClientName">Client Name</label>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="text" id="modalProductName" name="productName" required>
+                        <label for="modalProductName">Product Name</label>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="number" id="modalSaleAmount" name="saleAmount" required>
+                        <label for="modalSaleAmount">Sale Amount</label>
+                    </div>
+
+                    <div class="input-field">
+                        <select id="modalCurrency" name="currency" required>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                            <option value="CNY">CNY</option>
+                            <option value="HKD">HKD</option>
+                            <option value="ADA">ADA</option>
+                            <option value="USDM">USDM</option>
+                        </select>
+                        <label for="modalCurrency">Currency</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="addSale" class="modal-close btn waves-effect waves-light green">Add Sale</button>
+                <button class="modal-close btn waves-effect waves-light red">Close</button>
+            </div>
+        </div>
+
+        <div id="tableSection" class="table-section">
+            <div class="table-buttons">
+                <button id="openModalFromTable" class="btn waves-effect waves-light blue">Add New Sale</button>
+                <button id="submitSales" class="btn waves-effect waves-light green">Submit Sale</button>
+            </div>
             <h2>Sales Overview</h2>
             <table id="salesTable" class="highlight">
                 <thead>

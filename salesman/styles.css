@@ -1,79 +1,52 @@
+/* General Styles */
 body {
     font-family: 'Chivo', sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
+}
+
+/* Container for initial view */
+#initialView {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100vh;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    max-width: 1200px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.form-section {
-    width: 100%;
-    max-width: 500px;
-    margin-right: 20px;
-}
-
+/* Table section styles */
 .table-section {
-    width: 100%;
-    max-width: 500px;
-    display: none; /* Initially hide the table section */
+    display: none; /* Hidden initially */
+    margin-top: 20px;
 }
 
-.table-section table {
+/* Center the table buttons */
+.table-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Make sure the modal has enough width */
+.modal {
+    max-width: 600px;
+}
+
+/* Styling for the modal content */
+.modal-content h4 {
+    font-size: 0.75rem; /* Half the default size */
+}
+
+/* Styling for the table */
+table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.table-section th, .table-section td {
-    padding: 10px;
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
 }
 
-.table-section th {
-    background-color: #f4f4f9;
-}
-
-h1 {
-    color: #333;
-    font-size: 1.5rem; /* Font size reduced by half */
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #333;
-}
-
-.input-field {
-    margin-bottom: 15px;
-}
-
-.btn {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-}
-
-@media (min-width: 768px) {
-    .container {
-        flex-direction: row;
-    }
-
-    .form-section {
-        width: 50%;
-    }
-
-    .table-section {
-        width: 50%;
-    }
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
 }
