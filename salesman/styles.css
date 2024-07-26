@@ -1,52 +1,62 @@
-/* General Styles */
+/* Ensure that Chivo font is applied */
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap');
+
 body {
     font-family: 'Chivo', sans-serif;
 }
 
-/* Container for initial view */
-#initialView {
+.container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
 }
 
-/* Table section styles */
-.table-section {
-    display: none; /* Hidden initially */
+#initialView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tableSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#salesTable {
+    width: 100%;
+    max-width: 800px;
     margin-top: 20px;
 }
 
-/* Center the table buttons */
-.table-buttons {
+.modal-content {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    flex-direction: column;
 }
 
-/* Make sure the modal has enough width */
-.modal {
-    max-width: 600px;
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
 }
 
-/* Styling for the modal content */
-.modal-content h4 {
-    font-size: 0.75rem; /* Half the default size */
+.btn-large {
+    font-size: 1.2rem;
 }
 
-/* Styling for the table */
-table {
+.btn-small {
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f4f4f4;
-    font-weight: bold;
+    margin-top: 10px;
 }

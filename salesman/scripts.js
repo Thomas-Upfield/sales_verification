@@ -8,14 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for opening modal from initial view button
     document.getElementById('openModal').addEventListener('click', function() {
-        const modal = M.Modal.getInstance(document.getElementById('modal1'));
-        modal.open();
+        openModal();
     });
 
     // Event listener for opening modal from table section button
     document.getElementById('openModalFromTable').addEventListener('click', function() {
-        const modal = M.Modal.getInstance(document.getElementById('modal1'));
-        modal.open();
+        openModal();
     });
 
     // Event listener for adding sale
@@ -49,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const rows = document.querySelectorAll('#salesTable tbody tr').length;
         if (rows > 0) {
             // Handle the submission logic here
-            alert(rows === 1 ? 'Sale submitted.' : 'All sales submitted.');
+            alert('Sale submitted.');
 
             // Reset to initial state
             resetPage();
@@ -68,6 +66,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Function to open the modal and reset its content
+function openModal() {
+    const modal = M.Modal.getInstance(document.getElementById('modal1'));
+    const currencySelect = document.getElementById('modalCurrency');
+
+    // Reset form fields
+    document.getElementById('modalClientName').value = '';
+    document.getElementById('modalProductName').value = '';
+    document.getElementById('modalSaleAmount').value = '';
+    currencySelect.selectedIndex = 0; // Reset to the default placeholder option
+
+    // Reinitialize Materialize select
+    M.FormSelect.init(currencySelect);
+
+    // Open the modal
+    modal.open();
+}
 
 // Function to handle adding a sale
 function addSaleToTable(clientName, productName, saleAmount, currency) {
@@ -99,30 +115,23 @@ function addSaleToTable(clientName, productName, saleAmount, currency) {
 function updateSubmitButton() {
     const tableBody = document.querySelector('#salesTable tbody');
     const rows = tableBody.querySelectorAll('tr').length;
-    const submitButton = document.getElementById('submitSales');
-    const submitAllButton = document.getElementById('submitAll');
 
     if (rows === 1) {
-        submitButton.style.display = 'block';
-        submitAllButton.style.display = 'none';
+        document.getElementById('submitSales').style.display = 'inline';
+        document.getElementById('submitAll').style.display = 'none';
+    } else if (rows > 1) {
+        document.getElementById('submitSales').style.display = 'none';
+        document.getElementById('submitAll').style.display = 'inline';
     } else {
-        submitButton.style.display = 'none';
-        submitAllButton.style.display = 'block';
+        document.getElementById('submitSales').style.display = 'none';
+        document.getElementById('submitAll').style.display = 'none';
     }
 }
 
-// Function to reset the page to its initial state
+// Function to reset the page to the initial view
 function resetPage() {
-    // Hide the table section
     document.getElementById('tableSection').style.display = 'none';
-
-    // Show the initial view section
     document.getElementById('initialView').style.display = 'flex';
-
-    // Clear the table
-    document.querySelector('#salesTable tbody').innerHTML = '';
-
-    // Hide submit buttons
-    document.getElementById('submitSales').style.display = 'none';
-    document.getElementById('submitAll').style.display = 'none';
+    document.querySelector('#salesTable tbody').innerHTML = ''; // Clear table rows
+    updateSubmitButton(); // Ensure buttons are updated
 }

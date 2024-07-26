@@ -5,82 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Log</title>
     <!-- Materialize CSS CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Chivo Font CDN -->
-    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Font: Chivo -->
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div id="initialView" class="center">
-            <button id="openModal" class="btn-large waves-effect waves-light blue">Add New Sale</button>
+    <div id="initialView" class="container center-align">
+        <button id="openModal" class="btn-large">Add New Sale</button>
+    </div>
+
+    <div id="tableSection" class="container" style="display: none;">
+        <h2>Sales Overview</h2>
+        <div class="button-group">
+            <button id="openModalFromTable" class="btn-small">Add New Sale</button>
+            <button id="submitSales" class="btn-small" style="display: none;">Submit Sale</button>
+            <button id="submitAll" class="btn-small" style="display: none;">Submit All</button>
         </div>
+        <table id="salesTable" class="striped">
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Product Name</th>
+                    <th>Sale Amount</th>
+                    <th>Currency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sales rows will be added here -->
+            </tbody>
+        </table>
+    </div>
 
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Enter Your New Sales Here</h4>
-                <form id="modalForm">
-                    <div class="input-field">
-                        <input type="text" id="modalClientName" name="clientName" required>
-                        <label for="modalClientName">Client Name</label>
-                    </div>
-
-                    <div class="input-field">
-                        <input type="text" id="modalProductName" name="productName" required>
-                        <label for="modalProductName">Product Name</label>
-                    </div>
-
-                    <div class="input-field">
-                        <input type="number" id="modalSaleAmount" name="saleAmount" required>
-                        <label for="modalSaleAmount">Sale Amount</label>
-                    </div>
-
-                    <div class="input-field">
-                        <select id="modalCurrency" name="currency" required>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="USD">USD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="GBP">GBP</option>
-                            <option value="JPY">JPY</option>
-                            <option value="CNY">CNY</option>
-                            <option value="HKD">HKD</option>
-                            <option value="ADA">ADA</option>
-                            <option value="USDM">USDM</option>
-                        </select>
-                        <label for="modalCurrency">Currency</label>
-                    </div>
-                </form>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Enter Sale Details</h4>
+            <div class="input-field">
+                <input id="modalClientName" type="text">
+                <label for="modalClientName">Client Name</label>
             </div>
-            <div class="modal-footer">
-                <button id="addSale" class="modal-close btn waves-effect waves-light green">Add Sale</button>
-                <button class="modal-close btn waves-effect waves-light red">Close</button>
+            <div class="input-field">
+                <input id="modalProductName" type="text">
+                <label for="modalProductName">Product Name</label>
+            </div>
+            <div class="input-field">
+                <input id="modalSaleAmount" type="number" step="0.01">
+                <label for="modalSaleAmount">Sale Amount</label>
+            </div>
+            <div class="input-field">
+                <select id="modalCurrency">
+                    <option value="" disabled selected>Choose Currency</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CNY">CNY</option>
+                    <option value="HKD">HKD</option>
+                    <option value="ADA">ADA</option>
+                    <option value="USDM">USDM</option>
+                </select>
+                <label>Currency</label>
             </div>
         </div>
-
-        <div id="tableSection" class="table-section">
-            <div class="table-buttons">
-                <button id="openModalFromTable" class="btn waves-effect waves-light blue">Add New Sale</button>
-                <button id="submitSales" class="btn waves-effect waves-light green">Submit Sale</button>
-            </div>
-            <h2>Sales Overview</h2>
-            <table id="salesTable" class="highlight">
-                <thead>
-                    <tr>
-                        <th>Client Name</th>
-                        <th>Product Name</th>
-                        <th>Sale Amount</th>
-                        <th>Currency</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Rows will be dynamically added here -->
-                </tbody>
-            </table>
+        <div class="modal-footer">
+            <a href="#!" id="addSale" class="modal-close waves-effect waves-green btn">Add Sale</a>
         </div>
     </div>
-    <!-- Materialize JS and jQuery -->
+
+    <!-- Materialize JS CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JS -->
     <script src="scripts.js"></script>
 </body>
 </html>
