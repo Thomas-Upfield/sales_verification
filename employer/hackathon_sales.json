@@ -1,0 +1,82 @@
+[
+    {
+        "Client Name": "Henry",
+        "Product Name": "Ghost",
+        "Sale Amount": 1000000,
+        "Currency": "USD",
+        "Salesman": "Jason Belfort",
+        "Status": "UNVERIFIED"
+    },
+    {
+        "Client Name": "George",
+        "Product Name": "Phantom",
+        "Sale Amount": 1500000,
+        "Currency": "USD",
+        "Salesman": "Toby Welch",
+        "Status": "UNVERIFIED"
+    },
+    {
+        "Client Name": "Samantha",
+        "Product Name": "Dawn",
+        "Sale Amount": 4737372,
+        "Currency": "USD",
+        "Salesman": "Donnie Azoff",
+        "Status": "UNVERIFIED"
+    },
+    {
+        "Client Name": "Jane",
+        "Product Name": "Phantom",
+        "Sale Amount": 8884838,
+        "Currency": "USD",
+        "Salesman": "Jason Belfort",
+        "Status": "UNVERIFIED"
+    },
+    {
+        "Client Name": "Reggie",
+        "Product Name": "Wraith",
+        "Sale Amount": 5577393,
+        "Currency": "USD",
+        "Salesman": "Rugrat",
+        "Status": "UNVERIFIED"
+    },
+    {
+        "Client Name": "Jerry",
+        "Product Name": "Ghost",
+        "Sale Amount": 1615086,
+        "Currency": "USD",
+        "Salesman": "Jason Belfort",
+        "Status": "UNVERIFIED"
+    },
+    {
+        "Client Name": "Aunt Emma",
+        "Product Name": "Phantom",
+        "Sale Amount": 690899,
+        "Currency": "USD",
+        "Salesman": "Toby Welch",
+        "Status": "UNVERIFIED"
+    },
+    {
+        "Client Name": "Dr Phil",
+        "Product Name": "Dawn",
+        "Sale Amount": 1718782,
+        "Currency": "USD",
+        "Salesman": "Donnie Azoff",
+        "Status": "UNVERIFIED"
+    },
+    {
+        "Client Name": "Louis",
+        "Product Name": "Phantom",
+        "Sale Amount": 492456,
+        "Currency": "USD",
+        "Salesman": "Jason Belfort",
+        "Status": "UNVERIFIED"
+    },
+    {
+        "Client Name": "Leon",
+        "Product Name": "Wraith",
+        "Sale Amount": 1075076,
+        "Currency": "USD",
+        "Salesman": "Rugrat",
+        "Status": "UNVERIFIED"
+    }
+]

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <table id="salesTable" class="highlight">
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Product Name</th>
+                    <th>Sale Amount</th>
+                    <th>Currency</th>
+                    <th>
+                        Salesman
+                        <i class="fas fa-filter filter-icon" data-target="salesmanFilter"></i>
+                        <div id="salesmanFilterContainer" class="filter-container">
+                            <input type="text" id="salesmanFilter" placeholder="Filter by Salesman">
+                        </div>
+                    </th>
+                    <th>
+                        Status
+                        <i class="fas fa-filter filter-icon" data-target="statusFilter"></i>
+                        <div id="statusFilterContainer" class="filter-container">
+                            <select id="statusFilter">
+                                <option value="">All</option>
+                                <option value="UNVERIFIED">UNVERIFIED</option>
+                                <option value="VERIFIED">VERIFIED</option>
+                            </select>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+        <button id="validateButton" class="btn">VALIDATE</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
